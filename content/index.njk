@@ -1,15 +1,24 @@
 ---js
 const eleventyNavigation = {
-	key: "Home",
-	order: 1
+	key: "Home", order: 1
 };
 
 const numberOfLatestPostsToShow = 3;
 ---
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
+<link type="image/png" sizes="16x16" rel="icon" href=".../icons8-waving hand emoji-emoji-16.png">
+<h1>Hi, I'm Kelvin </h1>
+<p>
+	This is my personal website. I enjoy spending time either learning or building stuff<br></br>
+	Here in this website I share what I learn and projects.
+	I write <a href="blog.njk">articles</a>
+	on <a href=blog/language-learning.njk>Language learning</a>  and <a>Tech</a>
+	you can check also my projects at <a>projects</a>
+	and if you want to know me more you can check my <a>about</a>page
+</p>
 
+<h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
 {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
 {% set postslistCounter = postsCount %}
 {% include "postslist.njk" %}
